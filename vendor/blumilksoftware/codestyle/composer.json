@@ -1,0 +1,46 @@
+{
+  "name": "blumilksoftware/codestyle",
+  "description": "Blumilk codestyle configurator",
+  "license": "MIT",
+  "type": "library",
+  "require": {
+    "php": "^8.1",
+    "friendsofphp/php-cs-fixer": "^3.59",
+    "kubawerlos/php-cs-fixer-custom-fixers": "^3.21"
+  },
+  "require-dev": {
+    "jetbrains/phpstorm-attributes": "^1.1",
+    "phpunit/phpunit": "^10.0|^11.2",
+    "symfony/console": "^6.0|^7.0"
+  },
+  "authors": [
+    {
+      "name": "Krzysztof Rewak",
+      "email": "krzysztof.rewak@blumilk.pl"
+    }
+  ],
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "Blumilk\\Codestyle\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Blumilk\\Codestyle\\Tests\\": "tests/codestyle/"
+    }
+  },
+  "scripts": {
+    "cs": "./vendor/bin/php-cs-fixer fix --dry-run --diff --config codestyle.php",
+    "csf": "./vendor/bin/php-cs-fixer fix --diff --config codestyle.php",
+    "test": "./vendor/bin/phpunit tests --colors=always",
+    "unit": "./vendor/bin/phpunit tests/unit --colors=always",
+    "e2e": "./vendor/bin/phpunit tests/codestyle --colors=always"
+  },
+  "bin": [
+    "bin/codestyle"
+  ]
+}
