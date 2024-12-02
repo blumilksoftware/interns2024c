@@ -1,13 +1,14 @@
 <?php
 
-use App\Http\Controllers\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\Auth\ConfirmablePasswordController;
-use App\Http\Controllers\Auth\EmailVerificationNotificationController;
+use Interns2024c\Http\Controllers\Auth\AuthenticatedSessionController;
+use Interns2024c\Http\Controllers\Auth\ConfirmablePasswordController;
+use Interns2024c\Http\Controllers\Auth\EmailVerificationNotificationController;
 use Interns2024c\Http\Controllers\Auth\EmailVerificationPromptController;
-use App\Http\Controllers\Auth\NewPasswordController;
-use App\Http\Controllers\Auth\PasswordController;
-use App\Http\Controllers\Auth\PasswordResetLinkController;
+use Interns2024c\Http\Controllers\Auth\NewPasswordController;
+use Interns2024c\Http\Controllers\Auth\PasswordController;
+use Interns2024c\Http\Controllers\Auth\PasswordResetLinkController;
 use Interns2024c\Http\Controllers\Auth\VerifyEmailController;
+use Interns2024c\Http\Controllers\Auth\RegisteredUserController;
 
 use Illuminate\Support\Facades\Route;
 
