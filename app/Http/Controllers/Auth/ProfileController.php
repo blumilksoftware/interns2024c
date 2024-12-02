@@ -2,6 +2,7 @@
 
 namespace Interns2024c\Http\Controllers\Auth;
 
+use Interns2024c\Http\Controllers\Controller;
 use Interns2024c\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Http\RedirectResponse;

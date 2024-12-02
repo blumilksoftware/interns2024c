@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Interns2024c\Providers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Vite;

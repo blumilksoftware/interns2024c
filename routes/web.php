@@ -1,9 +1,9 @@
 <?php
 
-use Interns2024c\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Interns2024c\Http\Controllers\Auth\ProfileController;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [

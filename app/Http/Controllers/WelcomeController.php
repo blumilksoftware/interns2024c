@@ -9,9 +9,6 @@ class WelcomeController extends Controller
 {
     public function welcome(): Response
     {
-        $user = Auth::user();
-        return inertia('Welcome', [
-            'user' => $user
-        ]);
+        return inertia('Welcome');
     }
 }
