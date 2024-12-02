@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Interns2024c\Providers;
 
 use Illuminate\Support\Facades\Auth;
@@ -14,7 +16,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
     }
 
     /**
@@ -24,9 +25,9 @@ class AppServiceProvider extends ServiceProvider
     {
         Vite::prefetch(concurrency: 3);
         Inertia::share([
-            'auth' => function () {
+            "auth" => function () {
                 return [
-                    'user' => Auth::user()
+                    "user" => Auth::user(),
                 ];
             },
         ]);
