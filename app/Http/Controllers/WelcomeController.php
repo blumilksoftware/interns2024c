@@ -2,11 +2,12 @@
 
 namespace Interns2024c\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Inertia\Response;
+
 
 class WelcomeController extends Controller
 {
     public function welcome(){
-        return view('app');
+        return inertia('Welcome');
     }
 }
