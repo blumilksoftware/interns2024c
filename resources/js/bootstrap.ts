@@ -1,7 +1,6 @@
 import _ from 'lodash'
 import axios from 'axios'
 
-// window için tür tanımlama
 declare global {
     interface Window {
         _: typeof _
