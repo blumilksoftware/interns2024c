@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Tests\Feature;
 
-use Interns2024c\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Interns2024c\Models\User;
 use Tests\TestCase;
 
 class ProfileTest extends TestCase

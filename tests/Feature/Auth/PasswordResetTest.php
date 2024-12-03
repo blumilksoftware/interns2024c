@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Tests\Feature\Auth;
 
-use Interns2024c\Models\User;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Notification;
+use Interns2024c\Models\User;
 use Tests\TestCase;
 
 class PasswordResetTest extends TestCase

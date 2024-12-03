@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Tests\Feature\Auth;
 
-use Interns2024c\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Hash;
+use Interns2024c\Models\User;
 use Tests\TestCase;
 
 class PasswordUpdateTest extends TestCase

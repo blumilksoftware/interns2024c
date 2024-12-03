@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Tests\Feature\Auth;
 
-use Interns2024c\Models\User;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\URL;
+use Interns2024c\Models\User;
 use Tests\TestCase;
 
 class EmailVerificationTest extends TestCase
