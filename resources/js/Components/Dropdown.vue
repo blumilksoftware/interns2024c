@@ -73,12 +73,14 @@ const open = ref(false)
         @click="open = false"
       >
         <div
-          class="rounded-md ring-1 ring-black ring-opacity-5"
-          :class="contentClasses"
+            class="rounded-md ring-1 ring-black ring-opacity-[0.05]"
+            :class="contentClasses"
         >
           <slot name="content" />
         </div>
+
       </div>
     </Transition>
   </div>
 </template>
+

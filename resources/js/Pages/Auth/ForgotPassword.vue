@@ -9,6 +9,7 @@ import { Head, useForm } from '@inertiajs/vue3'
 defineProps({
   status: {
     type: String,
+    default: '',
   },
 })
 
@@ -20,6 +21,8 @@ const submit = () => {
   form.post(route('password.email'))
 }
 </script>
+
+
 
 <template>
   <GuestLayout>

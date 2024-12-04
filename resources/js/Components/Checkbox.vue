@@ -9,6 +9,7 @@ const props = defineProps({
     required: true,
   },
   value: {
+    type: [String, Number, Boolean, Object, Array],
     default: null,
   },
 })
@@ -32,3 +33,4 @@ const proxyChecked = computed({
     class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500"
   >
 </template>
+

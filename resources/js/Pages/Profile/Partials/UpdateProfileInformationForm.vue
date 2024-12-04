@@ -11,16 +11,17 @@ defineProps({
   },
   status: {
     type: String,
+    default: '',
   },
 })
 
 const user = usePage().props.auth.user
-
 const form = useForm({
   name: user.name,
   email: user.email,
 })
 </script>
+
 
 <template>
   <section>
@@ -110,3 +111,4 @@ const form = useForm({
     </form>
   </section>
 </template>
+

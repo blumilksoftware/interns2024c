@@ -2,6 +2,7 @@
 defineProps({
   message: {
     type: String,
+    required: true,
   },
 })
 </script>
@@ -13,3 +14,4 @@ defineProps({
     </p>
   </div>
 </template>
+

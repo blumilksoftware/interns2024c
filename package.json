@@ -15,7 +15,6 @@
         "@tailwindcss/typography": "^0.5.15",
         "laravel-vite-plugin": "^1.0.5",
         "lodash": "^4.17.21",
-        "tailwindcss": "^3.4.13",
         "vue": "^3.5.10"
     },
     "devDependencies": {
@@ -32,7 +31,7 @@
         "eslint-plugin-tailwindcss": "^3.17.4",
         "eslint-plugin-vue": "^9.28.0",
         "postcss": "^8.4.31",
-        "tailwindcss": "^3.2.1",
+        "tailwindcss": "^3.4.16",
         "typescript": "^5.7.2",
         "vite": "^5.4.8",
         "vue": "^3.4.0",

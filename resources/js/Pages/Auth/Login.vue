@@ -13,6 +13,7 @@ defineProps({
   },
   status: {
     type: String,
+    default: '',
   },
 })
 
@@ -28,6 +29,7 @@ const submit = () => {
   })
 }
 </script>
+
 
 <template>
   <GuestLayout>
