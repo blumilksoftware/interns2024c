@@ -55,4 +55,3 @@ defineProps({
     </div>
   </AuthenticatedLayout>
 </template>
-
