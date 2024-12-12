@@ -1,7 +1,7 @@
-import { defineConfig, loadEnv,  } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig, loadEnv  } from 'vite'
 import laravel from 'laravel-vite-plugin'
 import { networkInterfaces } from 'os'
+import vue from '@vitejs/plugin-vue';
 
 export default ({ mode }) => {
     process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
