@@ -6,6 +6,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Interns2024c\Http\Controllers\Auth\ProfileController;
+use Interns2024c\Http\Controllers\CourseController;
 
 Route::get("/", function () {
     return Inertia::render("Welcome", [
@@ -16,7 +17,9 @@ Route::get("/", function () {
     ]);
 });
 
-Route::get("/dashboard", fn() => Inertia::render("Dashboard"))->middleware(["auth", "verified"])->name("dashboard");
+Route::get("/dashboard", fn() => Inertia::render("Dashboard"))
+    ->middleware(["auth", "verified"])
+    ->name("dashboard");
 
 Route::middleware("auth")->group(function (): void {
     Route::get("/profile", [ProfileController::class, "edit"])->name("profile.edit");
@@ -24,4 +27,13 @@ Route::middleware("auth")->group(function (): void {
     Route::delete("/profile", [ProfileController::class, "destroy"])->name("profile.destroy");
 });
 
-require __DIR__ . "/auth.php";
+
+Route::middleware(['auth'])->group(function () {
+    // it is resource route for all course
+    Route::resource('courses', CourseController::class);
+});
+
+// we adding route for course details
+Route::get('/courses/{course}', [CourseController::class, 'show'])
+    ->name('courses.show'); // it shows with ıd
+
