@@ -1,18 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Interns2024c\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
-{  use HasFactory;
+{
+    use HasFactory;
 
-    protected $fillable = ['title', 'description', 'language', 'skill_level', 'user_id'];
+    protected $fillable = ["title", "description", "language", "skill_level", "user_id"];
 
     public function teacher()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class, "user_id");
     }
-
 }

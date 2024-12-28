@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 
 // Sayfa bileşenlerini import et
-import CoursesIndex from './Pages/Courses/index.vue';
+import CoursesIndex from './Pages/Courses/Index.vue';
 
 const routes: Array<RouteRecordRaw> = [
     {
