@@ -4,12 +4,15 @@ declare(strict_types=1);
 
 namespace Interns2024c\Http\Controllers;
 
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Interns2024c\Models\Course;
 
 class CourseController extends Controller
 {
+    use AuthorizesRequests;
+
     public function index()
     {
         $courses = Course::with("teacher")->paginate(10);

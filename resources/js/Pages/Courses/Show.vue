@@ -47,7 +47,5 @@ export default {
 </script>
 
 <style scoped>
-/* Tailwind CSS stillerini burada özelleştirebilirsiniz */
+
 </style>
-
-
