@@ -1,9 +1,9 @@
 <template>
   <div class="min-h-screen bg-gray-100 p-8">
-    <!-- Başlık -->
+    <!-- title -->
     <h1 class="text-4xl font-bold text-center mb-8">Courses</h1>
 
-    <!-- Filtreleme ve Sıralama -->
+    <!-- Filtre-->
     <div class="bg-gray p-6 rounded-lg shadow-lg mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
       <div class="flex flex-col md:flex-row gap-4">
         <div>
@@ -39,7 +39,7 @@
       </button>
     </div>
 
-    <!-- Kurs Listesi -->
+    <!-- course list-->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <div
           v-for="course in courses.data"
@@ -76,7 +76,7 @@ export default {
     filters: Object,
   },
   methods: {
-    // Filtreleme metodunu buraya ekleyin
+
     applyFilters() {
       const queryParams = {
         skill_level: this.filters.skill_level || null,
@@ -84,7 +84,7 @@ export default {
         order: this.filters.order || 'asc',
       };
 
-      // Filtreleme parametrelerini rotaya geçiyoruz
+
       this.$inertia.get(this.route('courses.index'), queryParams);
     },
     editCourse(courseId) {

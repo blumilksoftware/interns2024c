@@ -15,30 +15,30 @@ class CourseController extends Controller
 
     public function index(Request $request)
     {
-        // Sadece İngilizce kursları filtrelemek
+        /
         $query = Course::query();
 
 
-        // Skill Level (Seviye) filtresi
+
         if ($request->filled('skill_level')) {
             $query->where('skill_level', $request->skill_level);
         }
 
-        // Sıralama Kriteri
-        $sortBy = $request->get('sort_by', 'id'); // Varsayılan olarak 'id' ile sıralar
-        $order = $request->get('order', 'asc');  // Varsayılan olarak 'asc'
 
-        // Desteklenen sıralama alanları
+        $sortBy = $request->get('sort_by', 'id');
+        $order = $request->get('order', 'asc');
+
+
         $allowedSortBy = ['title', 'created_at', 'id'];
 
         if (in_array($sortBy, $allowedSortBy)) {
             $query->orderBy($sortBy, $order);
         }
 
-        // Kursları sayfalandırarak al
-        $courses = $query->paginate(6); // Her sayfada 6 kurs göster
 
-        // Filtreleri Vue'ya gönder
+        $courses = $query->paginate(6);
+
+
         return inertia('Courses/Index', [
             'courses' => $courses,
             'filters' => $request->only('skill_level', 'sort_by', 'order'),
