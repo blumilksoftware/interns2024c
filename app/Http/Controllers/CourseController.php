@@ -13,12 +13,40 @@ class CourseController extends Controller
 {
     use AuthorizesRequests;
 
-    public function index()
+    public function index(Request $request)
     {
-        $courses = Course::with("teacher")->paginate(10);
+        // Sadece İngilizce kursları filtrelemek
+        $query = Course::query();
 
-        return Inertia::render("Courses/Index", ["courses" => $courses]);
+
+        // Skill Level (Seviye) filtresi
+        if ($request->filled('skill_level')) {
+            $query->where('skill_level', $request->skill_level);
+        }
+
+        // Sıralama Kriteri
+        $sortBy = $request->get('sort_by', 'id'); // Varsayılan olarak 'id' ile sıralar
+        $order = $request->get('order', 'asc');  // Varsayılan olarak 'asc'
+
+        // Desteklenen sıralama alanları
+        $allowedSortBy = ['title', 'created_at', 'id'];
+
+        if (in_array($sortBy, $allowedSortBy)) {
+            $query->orderBy($sortBy, $order);
+        }
+
+        // Kursları sayfalandırarak al
+        $courses = $query->paginate(6); // Her sayfada 6 kurs göster
+
+        // Filtreleri Vue'ya gönder
+        return inertia('Courses/Index', [
+            'courses' => $courses,
+            'filters' => $request->only('skill_level', 'sort_by', 'order'),
+        ]);
     }
+
+
+
 
     public function create()
     {
