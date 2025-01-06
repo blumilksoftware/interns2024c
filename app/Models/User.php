@@ -20,25 +20,38 @@ use Laravel\Sanctum\HasApiTokens;
  */
 class User extends Authenticatable
 {
-    use HasApiTokens;
-    use HasFactory;
-    use Notifiable;
+    use HasApiTokens, HasFactory, Notifiable;
+
+    public mixed $id;
+    protected $table = 'users';
 
     protected $fillable = [
-        "name",
-        "email",
-        "password",
-    ];
-    protected $hidden = [
-        "password",
-        "remember_token",
+        'name',
+        'email',
+        'password',
     ];
 
-    protected function casts(): array
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+        'password' => 'hashed',
+    ];
+
+    /**
+     * Custom create method to handle user creation
+     *
+     * @param array $attributes
+     * @return static
+     */
+    public static function create(array $attributes): static
     {
-        return [
-            "email_verified_at" => "datetime",
-            "password" => "hashed",
-        ];
+        $attributes['password'] = bcrypt($attributes['password']);
+        return static::query()->create($attributes);
     }
+    
+
 }

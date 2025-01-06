@@ -5,7 +5,9 @@ declare(strict_types=1);
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Interns2024c\Http\Controllers\UserController;
 use Interns2024c\Http\Controllers\Auth\ProfileController;
+
 
 Route::get("/", function () {
     return Inertia::render("Welcome", [
@@ -15,6 +17,9 @@ Route::get("/", function () {
         "phpVersion" => PHP_VERSION,
     ]);
 });
+
+
+Route::resource("users", UserController::class);
 
 Route::get("/dashboard", fn() => Inertia::render("Dashboard"))->middleware(["auth", "verified"])->name("dashboard");
 
