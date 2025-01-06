@@ -15,7 +15,7 @@ class CourseController extends Controller
 
     public function index(Request $request)
     {
-        /
+
         $query = Course::query();
 
 
