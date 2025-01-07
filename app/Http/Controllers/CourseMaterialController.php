@@ -11,9 +11,13 @@ class CourseMaterialController extends Controller
      */
     public function index()
     {
+        $lessons = \Interns2024c\Models\Lesson::all();
+
         $materials = \Interns2024c\Models\CourseMaterial::with('lesson')->get();
 
-        $englishLevels = ['English A1', 'English A2', 'English B1', 'English B2', 'English C1', 'English C2', 'No Lesson'];
+        $englishLevels = $lessons->pluck('title')->toArray();
+
+        $englishLevels[] = 'No Lesson';
 
         $groupedMaterials = $materials->groupBy(function ($material) {
             return $material->lesson->title ?? 'No Lesson';
@@ -41,8 +45,15 @@ class CourseMaterialController extends Controller
 
         return inertia('CourseMaterials/Index', [
             'materials' => $transformedMaterials,
+            'lessons' => $lessons->map(function ($lesson) {
+                return [
+                    'id' => $lesson->id,
+                    'title' => $lesson->title,
+                ];
+            }),
         ]);
     }
+
 
     /**
      * Show the form for creating a new resource.
