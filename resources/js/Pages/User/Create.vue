@@ -2,7 +2,6 @@
   <div>
     <h1 class="text-2xl mb-4">Create User</h1>
 
-    <!-- User creation form -->
     <form @submit.prevent="createUser">
       <div class="mb-4">
         <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
@@ -19,7 +18,6 @@
         <input type="password" v-model="user.password" id="password" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
       </div>
 
-      <!-- Buttons for Submit and Cancel -->
       <div class="flex justify-end">
         <button type="submit" class="btn btn-primary mr-2">Create</button>
         <InertiaLink :href="route('users.index')" class="btn btn-secondary">Cancel</InertiaLink>
@@ -33,7 +31,6 @@ import { InertiaLink } from '@inertiajs/inertia-vue3'
 
 export default {
   props: {
-    user: Object,
   },
   components: {
     InertiaLink,
@@ -49,7 +46,6 @@ export default {
   },
   methods: {
     createUser() {
-      // Logic to handle user creation (e.g., make an API call)
       this.$inertia.post(route('users.store'), this.user);
     },
   },
@@ -57,7 +53,6 @@ export default {
 </script>
 
 <style scoped>
-/* TailwindCSS ile butonları ve form elemanlarını stilize etme */
 .btn {
   cursor: pointer;
   font-weight: bold;
