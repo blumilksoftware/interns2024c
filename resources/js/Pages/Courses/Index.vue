@@ -37,7 +37,6 @@ const deleteCourse = (courseId) => {
     <div class="min-h-screen bg-gray-100 p-6">
       <h1 class="text-3xl font-extrabold text-center mb-6 text-gray-800">Courses</h1>
 
-      <!-- Filtreleme Alanı -->
       <div class="p-4  rounded-lg shadow-md mb-6 flex flex-wrap items-center justify-center gap-3">
         <div class="flex gap-3">
           <select v-model="filters.skill_level" class="border-gray-300 rounded-md px-4 py-2 text-sm w-40">
@@ -64,7 +63,6 @@ const deleteCourse = (courseId) => {
         </button>
       </div>
 
-      <!-- Kurs Listesi -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <div v-for="course in courses.data" :key="course.id" class="bg-white p-4 rounded-lg shadow-md h-auto flex flex-col justify-between">
           <div>
