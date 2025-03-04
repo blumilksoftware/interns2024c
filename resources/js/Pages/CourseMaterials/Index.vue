@@ -1,15 +1,17 @@
 <template>
-  <div>
-    <h1
-        style="
+  <AuthenticatedLayout>
+    <template #header>
+      <h1
+          style="
         text-align: center;
         font-size: 32px;
         font-weight: bold;
         margin-bottom: 20px;
         color: #333;"
-    >
-      Course Materials
-    </h1>
+      >
+        Course Materials
+      </h1>
+    </template>
 
     <div style="text-align: center; margin-bottom: 30px;">
       <input
@@ -142,11 +144,16 @@
         </div>
       </div>
     </div>
-  </div>
+  </AuthenticatedLayout>
 </template>
 
 <script>
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
+
 export default {
+  components: {
+    AuthenticatedLayout
+  },
   props: {
     materials: {
       type: Array,
