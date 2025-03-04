@@ -34,6 +34,11 @@ class User extends Authenticatable
         "remember_token",
     ];
 
+    public function courses()
+    {
+        return $this->hasMany(Course::class);
+    }
+
     protected function casts(): array
     {
         return [
