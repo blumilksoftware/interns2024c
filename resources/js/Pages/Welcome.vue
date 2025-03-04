@@ -64,6 +64,7 @@ function handleImageError() {
               Dashboard
             </Link>
 
+
             <template v-else>
               <Link
                 :href="route('login')"

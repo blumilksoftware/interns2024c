@@ -1,0 +1,11 @@
+[90m= [39m[34;4mInterns2024c\Models\CourseMaterial[39;24m {#6442
+    [34mtitle[39m: "[32mSample Material[39m",
+    [34mtype[39m: "[32mtext[39m",
+    [34mfile_path[39m: [36mnull[39m,
+    [34mdescription[39m: "[32mThis is a sample course material.[39m",
+    [34mlesson_id[39m: [35m1[39m,
+    [34mupdated_at[39m: "[32m2024-12-18 07:58:43[39m",
+    [34mcreated_at[39m: "[32m2024-12-18 07:58:43[39m",
+    [34mid[39m: [35m1[39m,
+  }
+
